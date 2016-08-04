@@ -10,9 +10,6 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
-<P>  The time on the server is ${serverTime2}. </P>
-<P>  The time on the server is ${serverTime3}. </P>
-<button></button>
+<P>  The time on the server is ${user}. </P>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package issue.king.test;
+package issue.king.test.api.controller.common;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -32,6 +32,8 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("serverTime2", formattedDate );
+		model.addAttribute("serverTime3", formattedDate );
 		
 		return "home";
 	}
