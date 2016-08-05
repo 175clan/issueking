@@ -1,7 +1,5 @@
 package issue.king.test.api.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,8 +16,8 @@ public class UserDaoImpl implements UserDao{
         this.sqlSession = sqlSession;
     }
  
-    public List<User> getUserList() {
+    public User userInfo() {
         
-        return sqlSession.selectList("getUserList");
+        return sqlSession.selectOne("getUserList");
     }
 }

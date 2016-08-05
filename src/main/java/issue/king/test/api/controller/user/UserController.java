@@ -1,14 +1,18 @@
 package issue.king.test.api.controller.user;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import issue.king.test.api.model.User;
 import issue.king.test.api.service.UserService;
 
 
@@ -23,9 +27,10 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping(value="/signin", method = RequestMethod.GET)
-	public String home(Model model) {
-        
-        model.addAttribute("user", userService.getUserList());       
+	public String userInfo(HttpServletRequest request, ModelMap modelMap) throws Exception{
+		User userInfo = userService.userInfo();
+		
+        modelMap.addAttribute("user", userInfo);       
          
         return "/user/user";
     }
